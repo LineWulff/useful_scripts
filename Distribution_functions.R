@@ -14,7 +14,8 @@ for (clus in res_df$cluster){
   return(res_df)
   }
 
-# one discrete column + a split
+# one discrete column + a split, for instance on per sample base to see clustering
+# equally distribution not dominated by single sample of many cells
 perc_function_samp <- function(meta_col, cell_vec, Seu_obj,splitgroup){
   Seu_obj_sub <- subset(Seu_obj, cells = cell_vec)
   res_df <- data.frame(cluster=rep(unique(Seu_obj_sub@meta.data[,meta_col]),length(unique(Seu_obj_sub@meta.data[,splitgroup]))))
