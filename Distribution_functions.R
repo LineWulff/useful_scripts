@@ -1,7 +1,8 @@
+##### Function to create dataframe for visualization (like barplots) of distribution within a Seurat single cell object
+# meta data column (discrete) contribution to specific cells (could be all cell in an object)
+# can be plotted as in 22_03_F5_monomac_update.R - not currently on github
 
-# cluster contribution to specific cells (could be all cell in an object)
-# can be plotted as in 22_03_F5_monomac_update.R
-
+# one discrete column with no splits, e.g. a clustering
 perc_function <- function(meta_col, cell_vec, Seu_obj){
   Seu_obj_sub <- subset(Seu_obj, cells = cell_vec)
   res_df <- data.frame(cluster=unique(Seu_obj_sub@meta.data[,meta_col]))
@@ -13,6 +14,7 @@ for (clus in res_df$cluster){
   return(res_df)
   }
 
+# one discrete column + a split
 perc_function_samp <- function(meta_col, cell_vec, Seu_obj,splitgroup){
   Seu_obj_sub <- subset(Seu_obj, cells = cell_vec)
   res_df <- data.frame(cluster=rep(unique(Seu_obj_sub@meta.data[,meta_col]),length(unique(Seu_obj_sub@meta.data[,splitgroup]))))
