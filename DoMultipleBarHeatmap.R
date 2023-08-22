@@ -1,4 +1,7 @@
 ##### Function to plot multiple metadata columns as idenditities in group rows of heatmap ####
+#### Altered version of Seurats DoHeatmap function
+#### Plot example with "plot_multipleHM.R"
+
 suppressPackageStartupMessages({
   library(rlang)
 })
