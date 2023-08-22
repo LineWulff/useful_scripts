@@ -1,5 +1,8 @@
 ## input list of 5 sets of genes!! (you can repeat ine list several times if you don't have 5)
+## calculates all overlap - outputs only common overlap
+## modify to retutn additional if needed
 
+# A=1, B=2, C=3, D=4, E=5, so n12 = overlap between A & B, n1234 is overlap between A, B, C, & D
 vennover <- function(x){
 A <- x[[1]]
 B <- x[[2]]

@@ -2,7 +2,7 @@
 ######################### Converting gene symbols to entrez IDs ########################################
 ########################################################################################################
 #load your DEG list of interest
-DEG <- read.csv("/Volumes/Mucosal-immunology/WA group/Line/10x_other/Kristina/analysis/multiple_merge/NEU_WT-DEL/R2/clustering/R2_clusterDEG_res0.1.csv")
+DEG <- read.csv("/FileWGeneList.csv")
 #library for musmusculus
 library(org.Mm.eg.db)
 
@@ -32,7 +32,7 @@ DEGwEntrezids <- cbind(DEGwEntrezids, entrezids)
 DEGwEntrezids <- DEGwEntrezids[,c("ENTREZID","avg_logFC")] #if you remove hashtag fron above put one in the start of this line
 
 #save the file
-write.csv(DEGwEntrezids, file="/Volumes/Mucosal-immunology/WA group/Line/10x_other/Kristina/analysis/multiple_merge/NEU_WT-DEL/R2/clustering/R2_DEG_01_entrezIDsandlogFC.csv")
+write.csv(DEGwEntrezids, file="/FileWGeneList_EntrezIDconverted.csv")
 
 
 

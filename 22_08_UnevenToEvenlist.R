@@ -1,5 +1,6 @@
 ## Function converting a list of vectors of varying length
 ## to list of vectors of the same length - inserting NAs
+## useful in creating csvs of uneven lists
 
 #list needs indivdual names to worj, NOT numbers
 
